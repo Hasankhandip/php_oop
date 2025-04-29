@@ -12,5 +12,10 @@ class DB {
                 echo $e->getMessage();
             }
         }
+        return self::$pdo;
+    }
+
+    public static function prepareOwn($sql) {
+        return self::connection()->prepare($sql);
     }
 }
